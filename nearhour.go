@@ -23,5 +23,9 @@ func NearHour(now time.Time, hour int) time.Time {
 		return time.Date(y, m, d, hour+12, 0, 0, 0, loc)
 	}
 
+	if hour+12 > now.Hour() {
+		return time.Date(y, m, d, hour+12, 0, 0, 0, loc)
+	}
+
 	return time.Date(y, m, d+1, hour, 0, 0, 0, loc)
 }
